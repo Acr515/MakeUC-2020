@@ -2,6 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
 //import MapView, { Marker } from 'react-native-maps';
 import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, Platform, TextInput } from 'react-native';
+import apiRequest from "../tools/Utility";
+import { FULL_STYLE } from "../tools/Styles";
 
 // Contains the code to display the main view that consists of showing the restroom map
 export default class Main extends Component {
@@ -13,7 +15,7 @@ export default class Main extends Component {
         return (
             <View style={styles.container}>
                 <StatusBar style="dark" />
-                
+                <Text style={FULL_STYLE.h1}>welcome to the app</Text>
             </View>
         );
     }

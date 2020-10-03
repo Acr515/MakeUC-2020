@@ -17,7 +17,7 @@ export default class Login extends Component {
         };
 
         this.setState({ loading: true, disabled: true }, () => {
-            apiRequest("register", data, (response) => {
+            apiRequest("login", data, (response) => {
                 alert(response.response);
                 this.setState({ loading: false, disabled: false });
             }, (error) => {

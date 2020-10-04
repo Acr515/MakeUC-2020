@@ -9,6 +9,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 // Importing all screens into app
 import Login from "./screens/Login";
+import Main from "./screens/Main";
 
 const Stack = createStackNavigator();
 
@@ -24,11 +25,20 @@ export default function App() {
                             headerShown: false
                         }}
                     />
+                    <Stack.Screen 
+                        name="Main"
+                        component={Main}
+                        options={{
+                            headerShown: false
+                        }}
+                    />
                 </Stack.Navigator>
             </NavigationContainer>
         </SafeAreaProvider>
     );
 }
+
+
 
 const styles = StyleSheet.create({
   container: {

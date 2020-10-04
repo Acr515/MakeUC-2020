@@ -13,7 +13,7 @@ export default function Main({ navigation }) {
     return (
         <View style={styles.container}>
             <StatusBar style="light" />
-            <Text>Review ting</Text>
+            <Text>Reviews would be listed here</Text>
         </View>
     );
 }

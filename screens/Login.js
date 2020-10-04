@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, TextInput } from 'react-native';
 import apiRequest from "../tools/Utility";
 import { FULL_STYLE } from "../tools/Styles";
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Login({ navigation }) {
     const [loginUsername, setLoginUsername] = useState("");
@@ -59,22 +60,25 @@ export default function Login({ navigation }) {
     }
 
     return (
-        <View style={styles.container}>
+        <LinearGradient 
+            style={styles.container}
+            colors={["#EE77AA", "#9944CC"]}
+        >
             <StatusBar style="dark" />
             <View style={[styles.login, (register) ? FULL_STYLE.hidden : {} ]}>
-                <Text style={[FULL_STYLE.h1]}>Login</Text>
+                <Text style={[FULL_STYLE.h1, FULL_STYLE.white]}>Login</Text>
                 <TextInput style={FULL_STYLE.textInput} placeholder="Username" onChangeText={(text) => setLoginUsername(text)} />
                 <TextInput style={FULL_STYLE.textInput} secureTextEntry={true} placeholder="Password" onChangeText={(text) => setLoginPassword(text)} />
                 <TouchableOpacity style={FULL_STYLE.bigButton} disabled={ disabled } onPress={ login }>
                     <Text style={FULL_STYLE.bigButtonText}>Login</Text>
                 </TouchableOpacity>
                 <TouchableOpacity disabled={ disabled } onPress={ toggleRegistration }>
-                    <Text>Don't have an account? Register here.</Text>
+                    <Text style={[FULL_STYLE.white]}>Don't have an account? Register here.</Text>
                 </TouchableOpacity>
             </View>
 
             <View style={[styles.login, (!register) ? FULL_STYLE.hidden : {} ]}>
-                <Text style={[FULL_STYLE.h1]}>Register</Text>
+                <Text style={[FULL_STYLE.h1, FULL_STYLE.white]}>Register</Text>
                 <TextInput style={FULL_STYLE.textInput} placeholder="Username" onChangeText={(text) => setRegisterUsername(text)} />
                 <TextInput style={FULL_STYLE.textInput} secureTextEntry={true} placeholder="Password" onChangeText={(text) => setRegisterPassword(text)} />
                 <TextInput style={FULL_STYLE.textInput} secureTextEntry={true} placeholder="Password (again)" onChangeText={(text) => setConfirmPassword(text)} />
@@ -83,14 +87,14 @@ export default function Login({ navigation }) {
                     <Text style={FULL_STYLE.bigButtonText}>Register</Text>
                 </TouchableOpacity>
                 <TouchableOpacity disabled={ disabled } onPress={ toggleRegistration }>
-                    <Text>Already have an account? Login here.</Text>
+                    <Text style={[FULL_STYLE.white]}>Already have an account? Login here.</Text>
                 </TouchableOpacity>
             </View>
             
             {
             (loading) ? (<ActivityIndicator size="large" />) : null
             }
-        </View>
+        </LinearGradient>
     );
 }
 

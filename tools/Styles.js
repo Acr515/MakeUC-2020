@@ -33,8 +33,11 @@ export const FULL_STYLE = StyleSheet.create({
     textButton: {
 
     },
+    white: {
+        color: "white"
+    },
     h1: {
-        fontSize: 20,
+        fontSize: 24,
         fontWeight: "bold"
     },
     h2: {
@@ -44,5 +47,9 @@ export const FULL_STYLE = StyleSheet.create({
     h3: {
         fontSize: 14,
         fontWeight: "bold",
+    },
+    // Don't get all triggered this ain't stars n bars
+    starsBar: {
+
     }
 });

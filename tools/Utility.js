@@ -19,3 +19,14 @@ export default function apiRequest(command, params, callback, failCallback) {
         return failCallback(error);
     });
 }
+
+export function generateStars(stars) {
+    var string = "";
+    for (var i = 0; i < stars; i ++) {
+        string += "★";
+    }
+    for (var j = i; j < 5; j ++) {
+        string += "☆";
+    }
+    return string;
+}

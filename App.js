@@ -10,6 +10,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 // Importing all screens into app
 import Login from "./screens/Login";
 import Main from "./screens/Main";
+import Details from "./screens/Details";
 
 const Stack = createStackNavigator();
 
@@ -29,7 +30,19 @@ export default function App() {
                         name="Main"
                         component={Main}
                         options={{
-                            headerShown: false
+                            headerShown: false,
+                            gestureEnabled: false
+                        }}
+                    />
+                    <Stack.Screen 
+                        name="Details"
+                        component={Details}
+                        options={{
+                            headerTintColor: "white",
+                            headerStyle: {
+                                backgroundColor: "#EE77AA"
+                            }
+                            
                         }}
                     />
                 </Stack.Navigator>
